@@ -3,6 +3,8 @@ package com.salsatechnology.service;
 import javax.transaction.Transactional;
 
 import com.salsatechnology.model.ProductType;
+import com.salsatechnology.repository.ComissionRepository;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +17,16 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 
 @Service
+@Data
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ProductOrderService {
 
+	@Autowired
 	private final ProductOrderRepository productOrderRepository;
-	
+
+	@Autowired
+	private ComissionFactoryService comissionFactoryService;
+
 	@Transactional
 	public void createOrder(ProductOrderDTO productOrderDTO) {
 		productOrderRepository.save(createProductOrder(productOrderDTO));
@@ -31,18 +38,17 @@ public class ProductOrderService {
 		productOrder.setProductType(productOrderDTO.getProductType());
 		productOrder.setTimeHour(productOrderDTO.getTimeHour());
 
-		ComissionService comissionService = new ComissionService(productOrder);
+		ComissionRepository comissionRepository = comissionFactoryService.findComission(productOrder.getProductType());
 
-		comissionService.calculateComission(productOrder.getProductType());
+		System.out.println(comissionRepository);
+
+		comissionRepository.calc();
 
 		return productOrder;
 	}
 
-	public List<ProductOrder> getAllOrders() {
+	public List<ProductOrder> findAll() {
 		return productOrderRepository.findAll();
 	}
 
-	public List<ProductOrder> getProductByProductType(ProductType productType) {
-		return productOrderRepository.findAll().stream().filter(x -> x.getProductType() == productType).toList();
-	}
 }
