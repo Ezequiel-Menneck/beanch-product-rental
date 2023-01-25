@@ -2,7 +2,8 @@ package com.strategy.service;
 
 import javax.transaction.Transactional;
 
-import com.strategy.repository.ComissionRepository;
+import com.strategy.model.ProductType;
+import com.strategy.service.strategy.CalculateProductType;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import com.strategy.repository.ProductOrderRepository;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Data
@@ -37,17 +39,25 @@ public class ProductOrderService {
 		productOrder.setProductType(productOrderDTO.getProductType());
 		productOrder.setTimeHour(productOrderDTO.getTimeHour());
 
-		ComissionRepository comissionRepository = comissionFactoryService.findComission(productOrder.getProductType());
+		CalculateProductType calculateProductType = comissionFactoryService.findComission(productOrder.getProductType());
 
-		System.out.println(comissionRepository);
-
-		comissionRepository.calc();
+		productOrder.setProductValue(calculateProductType.productValue());
+		productOrder.setProductTotal(calculateProductType.getProductTotal(productOrderDTO));
+		productOrder.setUserAmount(calculateProductType.getUserAmount(productOrderDTO));
 
 		return productOrder;
 	}
 
 	public List<ProductOrder> findAll() {
 		return productOrderRepository.findAll();
+	}
+
+	public List<ProductOrder> findByProductType(ProductType productType) {
+		return productOrderRepository.findAll().stream().filter(x -> x.getProductType() == productType).toList();
+	}
+
+	public Optional<ProductOrder> findById(Long id) {
+		return productOrderRepository.findById(id);
 	}
 
 }
