@@ -1,6 +1,6 @@
-package com.salsatechnology.repository;
+package com.strategy.repository;
 
-import com.salsatechnology.model.ProductType;
+import com.strategy.model.ProductType;
 import org.springframework.stereotype.Repository;
 
 @Repository

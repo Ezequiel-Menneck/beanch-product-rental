@@ -1,8 +1,8 @@
-package com.salsatechnology.entities;
+package com.strategy.entities;
 
-import com.salsatechnology.model.ProductOrder;
-import com.salsatechnology.model.ProductType;
-import com.salsatechnology.repository.ComissionRepository;
+import com.strategy.model.ProductOrder;
+import com.strategy.model.ProductType;
+import com.strategy.repository.ComissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.salsatechnology.model;
+package com.strategy.model;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

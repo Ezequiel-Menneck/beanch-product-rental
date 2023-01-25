@@ -1,4 +1,4 @@
-package com.salsatechnology.model;
+package com.strategy.model;
 
 public enum ProductType {
 

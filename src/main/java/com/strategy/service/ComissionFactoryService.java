@@ -1,10 +1,8 @@
-package com.salsatechnology.service;
+package com.strategy.service;
 
-import com.salsatechnology.model.ProductType;
-import com.salsatechnology.repository.ComissionRepository;
-import lombok.Data;
+import com.strategy.model.ProductType;
+import com.strategy.repository.ComissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

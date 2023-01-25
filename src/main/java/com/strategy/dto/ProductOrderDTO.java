@@ -1,9 +1,9 @@
-package com.salsatechnology.dto;
+package com.strategy.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import com.salsatechnology.model.ProductType;
+import com.strategy.model.ProductType;
 
 import lombok.Data;
 

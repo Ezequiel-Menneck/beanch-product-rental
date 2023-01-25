@@ -1,16 +1,15 @@
-package com.salsatechnology.service;
+package com.strategy.service;
 
 import javax.transaction.Transactional;
 
-import com.salsatechnology.model.ProductType;
-import com.salsatechnology.repository.ComissionRepository;
+import com.strategy.repository.ComissionRepository;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.salsatechnology.dto.ProductOrderDTO;
-import com.salsatechnology.model.ProductOrder;
-import com.salsatechnology.repository.ProductOrderRepository;
+import com.strategy.dto.ProductOrderDTO;
+import com.strategy.model.ProductOrder;
+import com.strategy.repository.ProductOrderRepository;
 
 import lombok.RequiredArgsConstructor;
 

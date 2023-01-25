@@ -1,14 +1,14 @@
-package com.salsatechnology.controller;
+package com.strategy.controller;
 
 import javax.validation.Valid;
 
-import com.salsatechnology.model.ProductOrder;
+import com.strategy.model.ProductOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import com.salsatechnology.dto.ProductOrderDTO;
-import com.salsatechnology.service.ProductOrderService;
+import com.strategy.dto.ProductOrderDTO;
+import com.strategy.service.ProductOrderService;
 
 import java.util.List;
 
