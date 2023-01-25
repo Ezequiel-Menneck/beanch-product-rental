@@ -1,8 +1,5 @@
 # beach-product-rental
 
-## Esse é um projecto Spring Boot para ser usado como base para o teste a seguir:
-O objetivo principal do teste é verificar o algorítimo criado pelo candidato para calcular o valor a ser pago para o funcionário.
-
 ## Cenário: A empresa XYZ trabalha com aluguel de produtos que são utilizados na praia.
 
 1. cada produto possui um valor cobrado por hora, o sistema aceita apenas valores inteiros para o campo hora;
@@ -44,11 +41,3 @@ Pedro vai receber uma comissão no valor de R$31,20 pelo aluguel do produto SURF
 # ATENÇÃO:
 - O valor do produto, total do produto e o valor a ser pago para o funcionário devem ser salvos no banco de dados com o valor multiplicado por 100. Para o exemplo do Pedro, o valor da comissão a ser salva no banco de dados é de 3120.
 - As classes ProductOrderDTO e ProductOrder não podem ser alteradas.
-- Fique a vontade para criar novas classes.
-
-Adicione na classe ProductOrderController um método para trazer a lista de pedidos, deve existir pelo menos um campo para ser utilizado como filtro.
-
-Fique a vontade para adicionar mais funcionalidades ao teste, como: criação de testes unitários, utilização de docker etc.
-
-
-# Boa sorte!!!
